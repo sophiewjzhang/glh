@@ -1,0 +1,41 @@
+{
+  "name": "portal",
+  "version": "1.0.0",
+  "description": "A portal.",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+  },
+  "author": "Sophie Z.",
+  "dependencies": {
+    "angular2": "2.0.0-beta.3",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "system": "^1.0.4",
+    "systemjs": "^0.19.20",
+    "underscore": "^1.8.3",
+    "zone.js": "0.5.11"
+  },
+  "devDependencies": {
+    "concurrently": "^1.0.0",
+    "lite-server": "^2.0.1",
+    "typescript": "^1.7.5",
+    "del": "^1.2.0",
+    "express": "^4.10.6",
+    "graceful-fs": "^3.0.7",
+    "gulp": "^3.8.11",
+    "gulp-if": "^1.2.5",
+    "gulp-sass": "^2.0.1",
+    "gulp-connect": "^2.2.0",
+    "gulp-express": "^0.1.4",
+    "gulp-util": "^3.0.1",
+    "gulp-open": "^0.3.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-typescript": "^2.7.6",
+    "run-sequence": "^1.1.0"
+  }
+}

@@ -1,0 +1,71 @@
+<section id="page-wrapper-landing" class="page-wrapper page-wrapper-landing bg-white ">
+    <div class="header container">
+        <div class="splash content global padding-top-s-m padding-left-s-m padding-right-s-m">
+            <banner-logo></banner-logo>
+            <div class="row">
+                <div class="landing-intro border-top margin-top-s-m padding-top-s-m alignment-left padding-left-s-m">
+                    <p>The increasing mobility of the global workforce requires highly portable and flexible health
+                        insurance programs that move with employees as they travel and/or relocate for business all
+                        around the world.
+                    </p>
+                    <p>With the global workforce steadily on the move between operations and assignments, employees need
+                        to know they are supported 24 hours a day by a truly global insurer with local market knowledge,
+                        superior service, and international doctor and hospital relationships.
+                    </p>
+                    <p>Generali's Mobile Health Plans provide comprehensive global Medical, Dental and Vision cover for
+                        expatriates, third country nationals and other mobile employees who are supported globally 24
+                        hours a day, 7 days a week</p>
+                </div>
+            </div>
+            <div class="row border-top">
+                <p class="color-primary alignment-left padding-top-s-m padding-left-s-m">Begin your journey with Generali Mobile Health</p>
+            </div>
+            <div class="row alignment-left">
+                <div class="col-sm-12 col-md-8 col-lg-5">
+                    <toggle-content [content]="content" [title]="primary_country_title"></toggle-content>
+                    <div class="list-container margin-top-s-m">
+                        <div class="selected padding-all-s-m color-white bg-primary margin-top-s-m" (click)="expandCountryList()">{{selectedCountry.name}}</div>
+                        <drop-down [items]="countryList" [selectedCountry]="selectedCountry" *ngIf="expandedCountry" ></drop-down>
+                        <div class="selected padding-all-s-m color-white bg-primary margin-top-s-m margin-bottom-s-m" (click)="otherCountry()">{{all_other_countries}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body bg-white container">
+        <div class="row content">
+            <!--<btn-landing [inputBtn]="selectedCta"></btn-landing>-->
+<!--            <div class="color-black padding-top-s-m alignment-left">
+                <div *ngIf="selectedCta.id==1">
+                </div>
+                <div *ngIf="selectedCta.id==2">
+                    For all other locations, please click below the button and you will be directed to our Global Service Centre.
+                </div>
+            </div>-->
+<!--            <div class="arrow-left"></div>
+            <ul class="button-landing color-white">
+                <li *ngFor="#btn of btns"
+                    class="col-sm-12 col-md-6 col-lg-6 ">
+                    <button [class.selected]="btn === selectedCta"
+                          (click)="onSelect(btn)"
+                        class="button button-landing button-left margin-top-s-m margin-right-s-m padding-all-s-m width-full">{{btn.name}}</button>
+                </li>
+            </ul>
+            <div class="arrow-right"></div>-->
+<!--            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 ">
+                    <button class="button button-left margin-top-s-m margin-right-s-m padding-all-s-m width-full">Select
+                        Primary Country of Residence
+                    </button>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 ">
+                    <a href="index.html" target="_self">
+                        <button class="button button-right margin-top-s-m padding-all-s-m width-full">Click to Research
+                            Claims
+                        </button>
+                    </a>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</section>

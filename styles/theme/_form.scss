@@ -1,0 +1,14 @@
+.input-error-inline{
+  @extend .color-primary;
+  @extend .padding-top-s-xs;
+  @extend .padding-bottom-s-xs;
+}
+input{
+  border:1px solid $grey;
+}
+input.ng-invalid.ng-untouched, input.ng-untouched{
+  border:1px solid $grey;
+}
+input.ng-invalid, input.ng-invalid.ng-dirty, select.ng-invalid.ng-dirty{
+  border:1px solid red;
+}

@@ -1,0 +1,258 @@
+/**
+* class for text font size
+* text-h1, text-h2...
+*/
+@for $i from 1 through 6 {
+  .text-h#{$i} {
+    @if( $i == 1){
+      font-size: $size-h1;
+    }@else if( $i == 2 ){
+      font-size: $size-h2;
+    }@else if( $i == 3 ){
+      font-size: $size-h3;
+    }@else if( $i == 4 ){
+      font-size: $size-h4;
+    }@else if( $i == 5 ){
+      font-size: $size-h5;
+    }@else if( $i == 6 ){
+      font-size: $size-h6;
+    }
+  }
+}
+.color-white{
+  color: $white;
+}
+.color-black{
+  color: $black;
+}
+.color-grey{
+  color: $grey;
+}
+.color-dark-grey{
+  color: $grey-text;
+}
+.color-blue{
+  color: #01619d;
+}
+.color-primary{
+  color:$primary-color;
+}
+.bg-white{
+  background-color: $white;
+}
+.bg-primary{
+  background-color: $primary-color;
+}
+.bg-blue-address{
+  background-color: $bg_blue_address;
+}
+
+.bg-dark-grey{
+  background-color: $grey-text;
+}
+.bg-grey{
+  background-color: $grey;
+}
+
+
+body{
+  color: #000000;
+}
+h4{
+  font-size: 14px;
+}
+h5{
+  font-size: 12px;
+}
+
+@media (max-width: 768px){
+  h1, .text-h1{
+    font-size: 1.5em
+  }
+}
+a{
+  color: #01619d;
+  cursor: pointer;
+  &:hover{
+    color:$primary-color;
+  }
+}
+.container{
+  width:100%;
+  .content{
+  }
+}
+
+button, .button{
+  &.selected{
+    //@include setOpacity(.5);
+    background-color: red;
+  }
+}
+
+ul.top-menu{
+  color:#c21b17;
+  list-style-type: none;
+  padding: 0;
+  display:inline-block;
+  float:right;
+  li{
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    display:inline-block;
+  }
+  li:after{
+    margin-left:5px;
+    //content:"|";
+  }
+  li:last-child:after{
+    content:"";
+  }
+}
+.menu-mobile{
+  position:absolute;
+  top: -18px;
+  right:10px;
+  font-size:72px;
+}
+.top-menu-mobile{
+  ul.list-links{
+
+  }
+}
+
+.head-line{
+  background-color: $primary-color;
+  padding:5px 0 5px 10px;
+}
+form.login{
+  text-align:left;
+  input{
+    background-color: $grey;
+    width:100%;
+  }
+  a{
+    display:block;
+  }
+  button{
+    width:45%;
+    padding-top:10px;
+    padding-bottom:10px;
+    &.login{
+      margin-right:20px;
+    }
+  }
+  button, input{
+    margin-bottom:20px;
+  }
+
+  .row{
+
+  }
+}
+.row{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.splash{
+  background-color: $grey;
+  background: url("../../images/bg_landing.gif")  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+/*  &.image-1{
+    background: url("../../images/cmn_background1.jpg")  no-repeat center center fixed;
+  }
+  &.image-2{
+    background: url("../../images/cmn_background2.jpg")  no-repeat center center fixed;
+  }
+  &.image-3{
+    background: url("../../images/cmn_background3.jpg")  no-repeat center center fixed;
+  }*/
+}
+
+.list-container{
+  ul{
+    list-style: none;
+    position: absolute;
+    width:100%;
+    top: 30px;
+    background-color: #ffffff;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+/*  .selected {
+    background-color: #CFD8DC !important;
+    color: white;
+  }*/
+}
+
+.page-wrapper{
+  .logo{
+    margin:5px 0 5px 0;
+  }
+  .logo img{
+    width:100px;
+    //height:164px;
+  }
+  .button {
+    color: $white;
+    background-color: $primary-color;
+  }
+}
+.page-body{
+  .content{
+  }
+  .login-container{
+    padding-top:20px;
+  }
+  .welcome{
+    margin-top:20px;
+  }
+  .member-login{
+    padding:40px 0 40px 0;
+  }
+}
+.page-home{
+  .page-header{
+    background-color: #FFFFFF;
+    background: url("../../images/bg_stripes.png") repeat-y;
+    width:100%;
+    color:#c21b17;
+  }
+  .footer{
+    .col{
+      padding: 0 !important;
+    }
+    background-color: #c21b17;
+    padding-top:10px;
+    .chat{
+      border: 2px solid #FFFFFF;
+      border-radius: 2px;
+      padding-left: 5px;
+      max-width:300px;
+    }
+    .icon-chat{
+      width:58px;
+      height:46px;
+      vertical-align: top;
+      margin-top: 8px;
+    }
+    .chat-desc{
+      max-width: 200px;
+      padding-left: 10px;
+      margin-top: 8px;
+      display:inline-block;
+    }
+    .copyright{
+      //float:right;
+      vertical-align: bottom;
+      padding-top:30px;
+    }
+  }
+}

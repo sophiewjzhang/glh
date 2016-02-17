@@ -1,0 +1,68 @@
+<section class="page-wrapper page-home bg-white">
+    <div class="page-header top-container padding-left-s-m padding-top-s-m">
+        <banner-logo></banner-logo>
+        <span class="visible-xs menu-mobile" (click)="expandTopMenu()">&#9776;</span>
+        <div class="top-menu-mobile" *ngIf="topMenuExpandded">
+            <section-links [items]="menus"></section-links>
+        </div>
+        <div class="alignment-right margin-right-s-xl">
+            <ul class="menu display-inline-block hidden-xs">
+                <li *ngFor="#item of menus"
+                    class="button button-m margin-right-s-m">
+                    <a href="#{{item.id}}" class="color-white">
+                        <span [class.selected]="item === selectedMenu"
+                          class="padding-all-s-m">{{item.name}}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-body color-white bg-dark-grey padding-left-s-xl padding-right-s-xl padding-bottom-s-xs">
+        <div class="row content">
+            <div class="alignment-center">
+                <span class="display-inline-block"><img class="visible-xs" src="./images/content_1_m.jpg"/></span>
+                <span class="display-inline-block"><img class="hidden-xs" src="./images/content_1.jpg"/></span>
+            </div>
+            <div class="bg-white color-black padding-all-s-m">
+                <section-search-claims></section-search-claims>
+                <section-find-a-doctor></section-find-a-doctor>
+                <section id="section-contact" class="section-wrapper">
+                    <div class="color-primary">
+                        <h3>HOW TO CONTACT THE GENERALI ASSISTANCE AND SERVICE CENTRE</h3>
+                    </div>
+                    <div class="alignment-center">
+                        <span class="display-inline-block"><img class="visible-xs" src="./images/googleMap_m.jpg"/></span>
+                        <span class="display-inline-block"><img class="hidden-xs" src="./images/googleMap.jpg"/></span>
+                    </div>
+                    <section-contact></section-contact>
+                </section>
+                <section id="section-tools" class="section-tools">
+                    <div class="color-primary"><h3>TOOLS FOR OUR MEMBERS</h3></div>
+                    <div>
+                        <div class="color-primary"><h4>Appeals Process</h4></div>
+                        <div>We aim to provide a helpful and efficient service; however, if you have a complaint, an appeal or a concern about any aspect of the service you have received please <a href="">click here</a> for submission details.</div>
+                        <div>All questions and comments can be submitted to <a href="">globalservice@generalihealth.com</a></div>
+                    </div>
+                    <div>
+                        <div><h4>Generali Mobile Health Instructional Videos</h4></div>
+                        <section-links [items]="videos"></section-links>
+                    </div>
+                    <div>
+                        <div><h4>Resources</h4></div>
+                        <div><a href="">Adobe Reader</a> - Please ensure you have the most current version of either the PC or MAC Adobe Reader</div>
+                        <section-links [items]="resources"></section-links>
+                    </div>
+                    <div>
+                        <div><h4>Forms</h4></div>
+                        <section-links [items]="forms"></section-links>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer padding-left-s-xl margin-left-s-xl margin-top-s-m margin-bottom-s-m">
+        <div class="padding-left-s-m">
+            <footer></footer>
+        </div>
+    </div>
+</section>

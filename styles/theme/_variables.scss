@@ -1,0 +1,61 @@
+/***************
+//overwrite default themes
+***************/
+$font-size-base: 14px;
+$em-base: 14px;
+$em-disabled: false;
+
+@function toEm($pxWidth) {
+  @if not $em-disabled {
+    @return $pxWidth / $em-base * 1em;
+  }
+  @else{
+    @return $pxWidth;
+  }
+}
+@mixin setOpacity($value: 1) {
+  filter: alpha(opacity=$value*100);
+  opacity: $value;
+}
+$primary-color: #c21b17;   // red
+$secondary-color: #7e1226; // white-lilac
+$alert-color: #f04124;     // cinnabar
+$success-color: #43AC6A;   // sea-green
+$warning-color: #f08a24;   // carrot
+$info-color: #a0d3e8;      // cornflower
+$link_blue_color:#007aff;
+$bg_blue_address: #007aff;
+
+$anchor-font-color:$link_blue_color;
+/**
+* grey colors
+*/
+$grey-text:#b0b0b0;
+$grey-bg: #d1d1d1;
+$grey-border:#c8c7cc;
+$grey: #d1d1d1;
+$dark-grey: darken($grey, 50%);
+$light-grey: lighten($grey, 50%);
+$white:#ffffff;
+$black:#000000;
+
+$margin-base: toEm(7px);
+$padding-base: toEm(7px);
+$global-border-radius: 5px;
+$global-border-color:$grey-border;
+$button-background-color:$primary-color;
+$button-label-color:#ffffff;
+
+/***************
+ Typography
+***************/
+$size-h1: toEm(35px);
+$size-h2: toEm(17px);
+$size-h3: toEm(16px);
+$size-h4: toEm(15px);
+$size-h5: toEm(12px);
+$size-h6: toEm(10px);
+
+$font-bold: 500;
+$font-regular: 100;
+$font-semi-bold: 300;

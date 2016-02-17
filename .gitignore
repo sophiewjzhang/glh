@@ -1,0 +1,9 @@
+node_modules/
+.idea
+.uploads
+css/
+package/
+build/
+app/lib
+styles/lib
+*.log
