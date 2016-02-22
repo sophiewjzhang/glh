@@ -21,7 +21,8 @@ System.register(['angular2/core'], function(exports_1) {
                 }
                 LinksComponent = __decorate([
                     core_1.Component({
-                        selector: 'section-links', templateUrl: 'views/links.html', styles: ["\n        ul{\n          list-style-type: none;\n          padding: 0;\n          display:inline-block;\n          width: 100%;\n          background-color: #eeeeee\n        }\n        li{\n            cursor: pointer;\n            display:block;\n            padding-bottom: 15px;\n            padding-top:15px;\n            border-bottom:solid 1px;\n        }\n    "], inputs: ['items']
+                        selector: 'section-links', templateUrl: 'views/links.html',
+                        styles: ["\n        ul{\n          list-style-type: none;\n          padding: 0;\n          display:inline-block;\n          width: 100%;\n          background-color: #eeeeee\n        }\n        li{\n            cursor: pointer;\n            display:block;\n            padding-bottom: 15px;\n            padding-top:15px;\n            border-bottom:solid 1px;\n        }\n    "], inputs: ['items']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], LinksComponent);

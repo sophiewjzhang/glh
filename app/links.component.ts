@@ -2,7 +2,8 @@ import {Component} from 'angular2/core';
 import {Cta} from './cta';
 
 @Component({
-    selector: 'section-links', templateUrl: 'views/links.html', styles: [`
+    selector: 'section-links', templateUrl: 'views/links.html',
+    styles: [`
         ul{
           list-style-type: none;
           padding: 0;

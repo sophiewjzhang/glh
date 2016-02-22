@@ -8,6 +8,7 @@ import {ContactComponent} from './contact.component';
 import {BannerLogoComponent} from './banner-logo.component';
 import {FooterComponent} from './footer.component';
 import {LinksComponent} from './links.component.ts';
+import {toggleIconComponent} from './toggle-icon.component';
 
 @Component({
     selector: 'my-app',
@@ -55,7 +56,7 @@ import {LinksComponent} from './links.component.ts';
             position:relative;
         }
     `],
-    directives: [DropDownComponent, BannerLogoComponent, FooterComponent, SearchClaimsComponent, FindADoctorComponent, ContactComponent, LinksComponent]
+    directives: [DropDownComponent, BannerLogoComponent, FooterComponent, toggleIconComponent, SearchClaimsComponent, FindADoctorComponent, ContactComponent, LinksComponent]
 })
 export class HomeComponent {
     public btns = BTNS;
@@ -73,6 +74,10 @@ export class HomeComponent {
     public videos=_videos;
     public resources=_resources;
     public topMenuExpandded=false;
+    public expandedContactGeneral=false;
+    public expandedAssitanceCIS=false;
+    public expandedRSC=false;
+    public expandedTools=false;
     //public curImg=imageId;
 
     onSelect(btn: Cta) { this.selectedCta = btn; }
@@ -81,6 +86,7 @@ export class HomeComponent {
     public otherCountry(){}
     public onSelectMenu(btn: Cta) { this.selectedMenu = btn; }
     public expandTopMenu(){ this.topMenuExpandded = !this.topMenuExpandded;}
+    public toggle(flag){this[flag]= !this[flag];}
 }
 
 var BTNS: Cta[] = [

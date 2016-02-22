@@ -1,4 +1,4 @@
-System.register(['angular2/core', './drop-down.component', './search-claims.component', './find-a-doctor.component', './contact.component', './banner-logo.component', './footer.component', './links.component.ts'], function(exports_1) {
+System.register(['angular2/core', './drop-down.component', './search-claims.component', './find-a-doctor.component', './contact.component', './banner-logo.component', './footer.component', './links.component.ts', './toggle-icon.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', './drop-down.component', './search-claims.comp
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, drop_down_component_1, search_claims_component_1, find_a_doctor_component_1, contact_component_1, banner_logo_component_1, footer_component_1, links_component_ts_1;
+    var core_1, drop_down_component_1, search_claims_component_1, find_a_doctor_component_1, contact_component_1, banner_logo_component_1, footer_component_1, links_component_ts_1, toggle_icon_component_1;
     var HomeComponent, BTNS, _countryList, _menus, _primaryCountryIntro, _primary_country_title, _select_primary_country, _all_other_countries, _forms, _videos, _resources;
     return {
         setters:[
@@ -35,6 +35,9 @@ System.register(['angular2/core', './drop-down.component', './search-claims.comp
             },
             function (links_component_ts_1_1) {
                 links_component_ts_1 = links_component_ts_1_1;
+            },
+            function (toggle_icon_component_1_1) {
+                toggle_icon_component_1 = toggle_icon_component_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
@@ -53,6 +56,10 @@ System.register(['angular2/core', './drop-down.component', './search-claims.comp
                     this.videos = _videos;
                     this.resources = _resources;
                     this.topMenuExpandded = false;
+                    this.expandedContactGeneral = false;
+                    this.expandedAssitanceCIS = false;
+                    this.expandedRSC = false;
+                    this.expandedTools = false;
                 }
                 //public curImg=imageId;
                 HomeComponent.prototype.onSelect = function (btn) { this.selectedCta = btn; };
@@ -61,12 +68,13 @@ System.register(['angular2/core', './drop-down.component', './search-claims.comp
                 HomeComponent.prototype.otherCountry = function () { };
                 HomeComponent.prototype.onSelectMenu = function (btn) { this.selectedMenu = btn; };
                 HomeComponent.prototype.expandTopMenu = function () { this.topMenuExpandded = !this.topMenuExpandded; };
+                HomeComponent.prototype.toggle = function (flag) { this[flag] = !this[flag]; };
                 HomeComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: 'views/home.html',
                         styles: ["\n        .splash{\n            min-height:500px;\n        }\n        .landing-intro{\n            max-width:500px;\n        }\n        .arrow-left:after{\n            content:'U+25C0';\n            font-size:30px;\n            display:inline;\n        }\n        .arrow-right:after{\n            content:'U+25B6';\n            font-size:30px;\n            display:inline;\n        }\n        .page-wrapper-landing{\n\n        }\n        .button-landing{\n\n        }\n        ul.menu a{\n            color:#ffffff;\n            text-decoration:none;\n        }\n        ul.menu li:hover{\n            background-color:#7e1226;\n        }\n        .logo-intro\n        {\n            max-width: 350px;\n            line-height: 2.5em;\n        }\n        .selected {\n          //background-color: #CFD8DC !important;\n          //color: white;\n        }\n        .list-container{\n            position:relative;\n        }\n    "],
-                        directives: [drop_down_component_1.DropDownComponent, banner_logo_component_1.BannerLogoComponent, footer_component_1.FooterComponent, search_claims_component_1.SearchClaimsComponent, find_a_doctor_component_1.FindADoctorComponent, contact_component_1.ContactComponent, links_component_ts_1.LinksComponent]
+                        directives: [drop_down_component_1.DropDownComponent, banner_logo_component_1.BannerLogoComponent, footer_component_1.FooterComponent, toggle_icon_component_1.toggleIconComponent, search_claims_component_1.SearchClaimsComponent, find_a_doctor_component_1.FindADoctorComponent, contact_component_1.ContactComponent, links_component_ts_1.LinksComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HomeComponent);

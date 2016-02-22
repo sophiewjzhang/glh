@@ -1,0 +1,18 @@
+.block-round-white{
+  @extend .radius-all;
+  color: $dark-grey;
+  background-color: $white;
+}
+.block-round-grey{
+  @extend .radius-all;
+  color: $black;
+  background-color: $grey;
+}
+.block-square-primary{
+  color: $white;
+  background-color: $primary-color;
+}
+.block-square-grey{
+  color: $black;
+  background-color: $grey;
+}

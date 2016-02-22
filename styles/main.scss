@@ -2,13 +2,14 @@
 * SCSS libraries
 =========================*/
 @import "theme/variables";//this is to overwrite default color themes.
-@import "theme/themes";
 @import "lib/bootstrap";//include customized bootstrap.
 @import "lib/scss_scaffold/scss_scaffold";
 /*=========================
 * application-wide SCSS styles
 =========================*/
-
+@import "theme/themes";
+@import "theme/media";
+@import "theme/blocks";
 /*=========================
 * directive SCSS styles
 =========================*/

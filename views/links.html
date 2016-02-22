@@ -1,15 +1,8 @@
-<section id="section-find-a-doctor" class="section-wrapper">
-    <div class="header">
-        <div class="color-primary"><h3>{{title}}</h3></div>
-    </div>
-    <div class="section-body">
-        <ul class="list-links">
-            <li *ngFor="#item of items"
-                class="cursor-pointer">
-                    <a href="{{item.longName}}">
-                        <span [class.selected]="item === selectedItem" class="padding-all-s-m">{{item.name}}</span>
-                    </a>
-            </li>
-        </ul>
-    </div>
-</section>
+<ul class="list-links">
+    <li *ngFor="#item of items"
+        class="cursor-pointer">
+            <a href="{{item.longName}}">
+                <span [class.selected]="item === selectedItem" class="padding-all-s-m">{{item.name}}</span>
+            </a>
+    </li>
+</ul>

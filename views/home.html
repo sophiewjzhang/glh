@@ -1,4 +1,4 @@
-<section class="page-wrapper page-home bg-white">
+<section class="page-home page-wrapper page-home bg-white">
     <div class="page-header top-container padding-left-s-m padding-top-s-m">
         <banner-logo></banner-logo>
         <span class="visible-xs menu-mobile" (click)="expandTopMenu()">&#9776;</span>
@@ -22,40 +22,120 @@
                 <span class="display-inline-block"><img class="visible-xs" src="./images/content_1_m.jpg"/></span>
                 <span class="display-inline-block"><img class="hidden-xs" src="./images/content_1.jpg"/></span>
             </div>
-            <div class="bg-white color-black padding-all-s-m">
+            <div class="bg-white color-black">
                 <section-search-claims></section-search-claims>
                 <section-find-a-doctor></section-find-a-doctor>
-                <section id="section-contact" class="section-wrapper">
-                    <div class="color-primary">
-                        <h3>HOW TO CONTACT THE GENERALI ASSISTANCE AND SERVICE CENTRE</h3>
+                <section id="section-contact-general" class="section-wrapper {{expandedContactGeneral}}" (click)="toggle('expandedContactGeneral')">
+                    <div class="section-header">
+                        <h3>How to Contact The Generali Assistance And Service Centre</h3>
+                        <toggle-icon [expanded]="expandedContactGeneral"></toggle-icon>
                     </div>
-                    <div class="alignment-center">
+                    <div class="section-content alignment-center">
                         <span class="display-inline-block"><img class="visible-xs" src="./images/googleMap_m.jpg"/></span>
                         <span class="display-inline-block"><img class="hidden-xs" src="./images/googleMap.jpg"/></span>
+                        <section-contact></section-contact>
                     </div>
-                    <section-contact></section-contact>
                 </section>
-                <section id="section-tools" class="section-tools">
-                    <div class="color-primary"><h3>TOOLS FOR OUR MEMBERS</h3></div>
-                    <div>
-                        <div class="color-primary"><h4>Appeals Process</h4></div>
-                        <div>We aim to provide a helpful and efficient service; however, if you have a complaint, an appeal or a concern about any aspect of the service you have received please <a href="">click here</a> for submission details.</div>
-                        <div>All questions and comments can be submitted to <a href="">globalservice@generalihealth.com</a></div>
+                <section class="section-wrapper {{expandedAssitanceCIS}}" (click)="toggle('expandedAssitanceCIS')">
+                    <div class="section-header">
+                        <h3>Assistance in RUSSIA and SELECT CIS and EASTERN EUROPEAN countries</h3>
+                        <toggle-icon [expanded]="expandedAssitanceCIS"></toggle-icon>
                     </div>
-                    <div>
-                        <div><h4>Generali Mobile Health Instructional Videos</h4></div>
-                        <section-links [items]="videos"></section-links>
+                    <div class="section-content">
+                        <div><span class="weight-bold">AP-Companies Global Solutions Ltd.</span> is the regional service centre for Russia and select CIS and Eastern European countries with offices located in Russia (Moscow) and Ukraine (Odessa). </div>
+                        <div class="padding-top-s-m">NOTE: You should contact AP Companies when requiring assistance in one of the countries listed below AND if your primary country of residence is also one of the countries listed below: </div>
+                        <div class="list-content">
+                            <ul class="list-countries display-inline-block padding-top-s-m padding-left-s-m">
+                                <li *ngFor="#item of countryList"
+                                    class="padding-right-s-m">
+                                    <span>{{item.name}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>If your country of residence is not on this list or you require care outside of these countries, please <a href="">click here.</a></div>
+                        <div class="">This regional office will be available to assist you with your healthcare needs including but not limited to:
+                            <ul class="">
+                                <li>24/7/365 multi-lingual assistance centre</li>
+                                <li>Coordination of direct billing when accessing an in-network provider</li>
+                                <li>Pre-authorisation of required services</li>
+                                <li>Assistance if you have been hospitalized</li>
+                                <li>Claims submission and reimbursement</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <div><h4>Resources</h4></div>
-                        <div><a href="">Adobe Reader</a> - Please ensure you have the most current version of either the PC or MAC Adobe Reader</div>
-                        <section-links [items]="resources"></section-links>
+                </section>
+                <section class="section-wrapper {{expandedRSC}}" (click)="toggle('expandedRSC')">
+                    <div class="section-header">
+                        <h3>How to Contact AP-Companies Regional Service Centre</h3>
+                        <toggle-icon [expanded]="expandedRSC"></toggle-icon>
                     </div>
-                    <div>
-                        <div><h4>Forms</h4></div>
-                        <section-links [items]="forms"></section-links>
+                    <div class="section-content">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <h4>Telephone</h4>
+                                <div>+ 7 (495) 640 18 08</div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <h4>Fax Number</h4>
+                                <div>+ 7 (495) 989 11 30</div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <h4>Email</h4>
+                                <div>generali@ap-companies.ru</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 padding-bottom-s-m">
+                            <h4>Claims Mailing Address</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 col-lg-4 padding-bottom-s-m">
+                                <a href="#">In Russia</a>
+                                <br/>AP-Companies
+                                <br/>Attention: Claims Department
+                                <br/>1 Zagorognoye Shosse
+                                <br/>117152 Moscow, Russia
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4 padding-bottom-s-m">
+                                <a href="#">Outside of Russia</a>
+                                <br/>C/O Spring
+                                <br/>MOW/MOW 16750
+                                <br/>PO Box 66, Hounslow, TW5 9RT
+                                <br/>United Kingdom
+                            </div>
+                        </div>
                     </div>
-
+                </section>
+                <section id="section-tools" class="section-wrapper {{expandedTools}}" (click)="toggle('expandedTools')">
+                    <div class="section-header">
+                        <h3>TOOLS FOR OUR MEMBERS</h3>
+                        <toggle-icon [expanded]="expandedTools"></toggle-icon>
+                    </div>
+                    <div class="section-content">
+                        <div>
+                            <div class="section-header-sub"><h4>Appeals Process</h4></div>
+                            <div>We aim to provide a helpful and efficient service; however, if you have a complaint, an appeal or a concern about any aspect of the service you have received please <a href="">click here</a> for submission details.</div>
+                            <div>All questions and comments can be submitted to <a href="">globalservice@generalihealth.com</a></div>
+                        </div>
+                        <div>
+                            <div class="section-header-sub"><h4>Working with AP Companies</h4></div>
+                            <div> <a href="">Frequently Asked Questions </a></div>
+                        </div>
+                        <div>
+                            <div class="section-header-sub"><h4>Generali Mobile Health Instructional Videos</h4></div>
+                            <section-links [items]="videos"></section-links>
+                        </div>
+                        <div>
+                            <div class="section-header-sub"><h4>Resources</h4></div>
+                            <div><a href="">Adobe Reader</a> - Please ensure you have the most current version of either the PC or MAC Adobe Reader</div>
+                            <section-links [items]="resources"></section-links>
+                        </div>
+                        <div>
+                            <div class="section-header-sub"><h4>Forms</h4></div>
+                            <section-links [items]="forms"></section-links>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>

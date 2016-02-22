@@ -43,6 +43,9 @@
 .bg-primary{
   background-color: $primary-color;
 }
+.bg-secondary{
+  background-color: $secondary-color;
+}
 .bg-blue-address{
   background-color: $bg_blue_address;
 }
@@ -57,6 +60,7 @@
 
 body{
   color: #000000;
+  font-family: 'Open Sans', sans-serif;
 }
 h4{
   font-size: 14px;
@@ -65,17 +69,13 @@ h5{
   font-size: 12px;
 }
 
-@media (max-width: 768px){
-  h1, .text-h1{
-    font-size: 1.5em
-  }
-}
 a{
-  color: #01619d;
+  color: $black;
   cursor: pointer;
-  &:hover{
-    color:$primary-color;
-  }
+}
+a:hover, a:focus{
+  color:$primary-color;
+  text-decoration: none;
 }
 .container{
   width:100%;
@@ -118,8 +118,12 @@ ul.top-menu{
 }
 .top-menu-mobile{
   ul.list-links{
-
+    height:100%;
+    width:100%;
   }
+  a{
+    color:$black;
+   }
 }
 
 .head-line{
@@ -174,6 +178,14 @@ form.login{
   }*/
 }
 
+.list-content{
+  ul{
+    list-style: none;
+    li{
+      display:inline-block;
+    }
+  }
+}
 .list-container{
   ul{
     list-style: none;
@@ -219,11 +231,56 @@ form.login{
   }
 }
 .page-home{
+  a{
+    color: $black;
+    cursor: pointer;
+  }
+  a:hover, a:focus{
+    color:$primary-color;
+    text-decoration: none;
+  }
+  ul.list-countries{
+    li:before{
+      content:'-';
+    }
+  }
   .page-header{
     background-color: #FFFFFF;
     background: url("../../images/bg_stripes.png") repeat-y;
     width:100%;
     color:#c21b17;
+  }
+  .section-wrapper{
+    .toggle-switch{
+      display:none;
+    }
+    .section-header{
+      position:relative;
+      background-color: $grey;
+      border-bottom: solid 1px #333333;
+      @extend .color-primary;
+      @extend .padding-top-s-m;
+      @extend .padding-bottom-s-m;
+      h3{
+        margin-top:0;
+        margin-bottom:0;
+        @extend .padding-left-s-m;
+        @extend .padding-right-s-m;
+      }
+    }
+    .section-header-sub{
+      color:$black;
+      font-weight: 500;
+    }
+    .section-content{
+      @extend .padding-all-s-m;
+    }
+    &.true .section-content{
+      display:block;
+    }
+    &.false .section-content{
+      display:none;
+    }
   }
   .footer{
     .col{
